@@ -32,7 +32,7 @@ body {
 
 .header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 24px;
   margin-bottom: 30px;
 }
@@ -80,13 +80,15 @@ a:hover {
 }
 
 .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 12px;
   margin: 0;
   font-size: 16px;
 }
 
 .links span {
-  color: #777777;
-  margin: 0 6px;
+  display: none;
 }
 
 .interests {
