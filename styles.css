@@ -31,7 +31,22 @@ body {
 }
 
 .header {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
   margin-bottom: 30px;
+}
+
+.portrait {
+  flex: 0 0 auto;
+  width: 160px;
+  height: 160px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.header-text {
+  min-width: 0;
 }
 
 h1 {
@@ -111,6 +126,16 @@ a:hover {
 
   .page {
     padding: 24px 18px 44px;
+  }
+
+  .header {
+    display: block;
+  }
+
+  .portrait {
+    width: 132px;
+    height: 132px;
+    margin: 0 0 16px;
   }
 
   h1 {
