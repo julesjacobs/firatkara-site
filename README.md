@@ -14,7 +14,7 @@ Common Codex requests:
 
 - "Add this publication to the selected publications list."
 - "Update the About paragraph with this text."
-- "Replace the CV file with this new document."
+- "Replace the CV PDF with this new document."
 
 After editing, commit and push to `main`. GitHub Pages publishes the site automatically.
 
