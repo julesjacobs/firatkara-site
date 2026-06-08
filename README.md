@@ -4,6 +4,10 @@ Static website for `firatkara.nl`, hosted on GitHub Pages.
 
 ## Editing
 
+Use this GitHub repository as the only source for website edits. Do not edit
+the public website through WordPress; update files here, then commit and push
+to `main`.
+
 Most content is in `index.html`.
 
 Common Codex requests:
