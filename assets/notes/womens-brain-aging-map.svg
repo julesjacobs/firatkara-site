@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">Women's brain aging concept map</title>
+  <desc id="desc">A concept map showing public research themes linking menopause-related exposures, vascular measures, PET and MRI biomarkers, cognition, and brain aging outcomes.</desc>
+  <rect width="960" height="520" fill="#ffffff"/>
+  <rect x="32" y="30" width="896" height="460" rx="14" fill="#f7f9fc" stroke="#d8dee8"/>
+  <text x="64" y="76" fill="#17202a" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Women's Brain Aging</text>
+  <text x="64" y="108" fill="#5d6673" font-family="Inter, Arial, sans-serif" font-size="16">Public synthesis: exposures, biomarkers, cognition, and later-life brain health</text>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="64" y="150" width="210" height="196" rx="10" fill="#ffffff" stroke="#d8dee8"/>
+    <text x="86" y="184" fill="#b4232a" font-size="14" font-weight="700" letter-spacing="1">EXPOSURES</text>
+    <text x="86" y="221" fill="#17202a" font-size="18" font-weight="700">Menopause context</text>
+    <text x="86" y="254" fill="#5d6673" font-size="15">Hormone therapy</text>
+    <text x="86" y="282" fill="#5d6673" font-size="15">Premenopausal BSO</text>
+    <text x="86" y="310" fill="#5d6673" font-size="15">VMS and sleep</text>
+
+    <rect x="344" y="126" width="230" height="120" rx="10" fill="#ffffff" stroke="#d8dee8"/>
+    <text x="366" y="160" fill="#1557a8" font-size="14" font-weight="700" letter-spacing="1">MEASURES</text>
+    <text x="366" y="196" fill="#17202a" font-size="18" font-weight="700">MRI and PET</text>
+    <text x="366" y="224" fill="#5d6673" font-size="15">Amyloid, structure, white matter</text>
+
+    <rect x="344" y="286" width="230" height="120" rx="10" fill="#ffffff" stroke="#d8dee8"/>
+    <text x="366" y="320" fill="#1557a8" font-size="14" font-weight="700" letter-spacing="1">MEASURES</text>
+    <text x="366" y="356" fill="#17202a" font-size="18" font-weight="700">Vascular and cognitive</text>
+    <text x="366" y="384" fill="#5d6673" font-size="15">Blood pressure and domains</text>
+
+    <rect x="654" y="170" width="240" height="176" rx="10" fill="#ffffff" stroke="#d8dee8"/>
+    <text x="676" y="204" fill="#b4232a" font-size="14" font-weight="700" letter-spacing="1">OUTCOMES</text>
+    <text x="676" y="240" fill="#17202a" font-size="18" font-weight="700">Brain aging profile</text>
+    <text x="676" y="274" fill="#5d6673" font-size="15">White matter health</text>
+    <text x="676" y="302" fill="#5d6673" font-size="15">Hippocampal structure</text>
+    <text x="676" y="330" fill="#5d6673" font-size="15">Cognitive trajectory</text>
+
+    <path d="M274 236 C310 220, 320 190, 344 186" fill="none" stroke="#b4232a" stroke-width="3"/>
+    <path d="M274 290 C310 312, 320 348, 344 350" fill="none" stroke="#b4232a" stroke-width="3"/>
+    <path d="M574 186 C614 190, 626 220, 654 250" fill="none" stroke="#1557a8" stroke-width="3"/>
+    <path d="M574 350 C616 346, 628 314, 654 294" fill="none" stroke="#1557a8" stroke-width="3"/>
+    <circle cx="274" cy="236" r="5" fill="#b4232a"/>
+    <circle cx="274" cy="290" r="5" fill="#b4232a"/>
+    <circle cx="574" cy="186" r="5" fill="#1557a8"/>
+    <circle cx="574" cy="350" r="5" fill="#1557a8"/>
+  </g>
+
+  <text x="64" y="445" fill="#5d6673" font-family="Inter, Arial, sans-serif" font-size="14">No unpublished results are shown. This figure summarizes public research domains only.</text>
+</svg>
