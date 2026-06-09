@@ -18,6 +18,18 @@ Common Codex requests:
 
 After editing, commit and push to `main`. GitHub Pages publishes the site automatically.
 
+## Privacy and public content
+
+This is a public website. Never publish private manuscript details, internal
+progress notes, unpublished data, draft analyses, private grant plans, private
+deadlines, patient or collaborator information, or any content copied from local
+folders, email, Word documents, PDFs, or progress trackers unless Firat has
+explicitly approved that exact content for public release.
+
+Use public sources for public pages: published papers, public conference pages,
+official institutional profiles, public CV/resume files, and public professional
+links. When in doubt, keep the information off the website and ask first.
+
 ## Domain
 
 The repository contains a `CNAME` file for `firatkara.nl`.
