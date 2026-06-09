@@ -378,22 +378,30 @@ a:hover {
 }
 
 .paintings-page {
-  max-width: 980px;
+  max-width: 1120px;
 }
 
-.painting-page-preview {
+.painting-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.painting-gallery a {
   display: block;
-  border-bottom: 0;
+  overflow: hidden;
+  background: var(--panel);
+  border: 0;
+  border-radius: 4px;
 }
 
-.painting-page-preview img {
+.painting-gallery img {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 1392 / 742;
+  height: 100%;
+  aspect-ratio: 420 / 559;
   object-fit: cover;
-  border: 1px solid var(--soft-rule);
-  border-radius: 8px;
 }
 
 .footer {
@@ -451,6 +459,11 @@ a:hover {
   .focus-list,
   .note-list {
     grid-template-columns: 1fr;
+  }
+
+  .painting-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
   }
 
   .priority-section {
