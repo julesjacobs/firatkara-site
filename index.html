@@ -192,9 +192,9 @@
           Grant cycles and conference abstract deadlines I'm tracking, on a
           timeline. Blue marks NIH grant dates, purple marks conference
           abstracts; <em>italic</em> entries are expected dates estimated from
-          prior years, and faded entries have passed. Labels stay short to keep
-          things uncluttered — click an entry to open its page, or hover to see
-          the exact date and days remaining.
+          prior years. Passed deadlines drop off automatically. Labels stay
+          short to keep things uncluttered — click an entry to open its page, or
+          hover to see the exact date and days remaining.
         </p>
         <div class="tl-legend" aria-hidden="true">
           <span class="tl-key tl-key-grant">NIH grant</span>
@@ -401,9 +401,19 @@
           expected: el.classList.contains("expected"),
         }));
 
+        // Hide deadlines that have already passed.
+        parsed.forEach((p) => {
+          if (Math.ceil((p.date - today) / DAY) < 0) p.el.style.display = "none";
+        });
+        const visible = parsed.filter((p) => Math.ceil((p.date - today) / DAY) >= 0);
+        if (!visible.length) {
+          timeline.classList.add("tl-ready");
+          return;
+        }
+
         // Frame: first of the current month → one month past the last item.
         const start = new Date(today.getFullYear(), today.getMonth(), 1);
-        const maxDate = parsed.reduce((m, p) => (p.date > m ? p.date : m), parsed[0].date);
+        const maxDate = visible.reduce((m, p) => (p.date > m ? p.date : m), visible[0].date);
         const end = new Date(maxDate.getFullYear(), maxDate.getMonth() + 2, 1);
         const monthsCount =
           (end.getFullYear() - start.getFullYear()) * 12 +
@@ -438,7 +448,7 @@
         const OFFSETS = [24, 78, 132];
         let prevY = -1e9;
         let rank = 0;
-        parsed
+        visible
           .slice()
           .sort((a, b) => a.date - b.date)
           .forEach((p) => {
@@ -449,11 +459,9 @@
             const lead = p.el.querySelector(".tl-lead");
             if (lead) lead.style.width = OFFSETS[rank] + "px";
             const days = Math.ceil((p.date - today) / DAY);
-            if (days < 0) p.el.classList.add("past");
             const dateEl = p.el.querySelector(".tl-date");
             if (dateEl && !p.expected) {
-              if (days < 0) dateEl.textContent = fmt(p.date) + " · passed";
-              else if (days === 0) dateEl.textContent = fmt(p.date) + " · today";
+              if (days === 0) dateEl.textContent = fmt(p.date) + " · today";
               else dateEl.textContent = fmt(p.date) + " · in " + days + (days === 1 ? " day" : " days");
             }
           });
