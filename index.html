@@ -191,9 +191,10 @@
         <p class="section-note">
           Grant cycles and conference abstract deadlines I'm tracking, on a
           timeline. Blue marks NIH grant dates, purple marks conference
-          abstracts. Dashed entries are <em>expected</em> dates estimated from
-          prior years (not yet announced); faded entries have passed. Click any
-          entry to open its page; hover to see days remaining.
+          abstracts; <em>italic</em> entries are expected dates estimated from
+          prior years, and faded entries have passed. Labels stay short to keep
+          things uncluttered — click an entry to open its page, or hover to see
+          the exact date and days remaining.
         </p>
         <div class="tl-legend" aria-hidden="true">
           <span class="tl-key tl-key-grant">NIH grant</span>
@@ -203,35 +204,43 @@
         <div class="timeline" aria-label="Research deadline timeline">
           <div class="tl-track">
             <a class="tl-item grant main" data-date="2026-10-05" href="https://grants.nih.gov/grants-process/submit/submission-policies/standard-due-dates" target="_blank" rel="noopener" title="NIH R01 new applications — Oct 5, 2026">
+              <span class="tl-lead" aria-hidden="true"></span>
               <span class="tl-name">NIH R01</span>
               <span class="tl-date">Oct 5, 2026</span>
             </a>
             <a class="tl-item grant main" data-date="2026-10-16" href="https://grants.nih.gov/grants-process/submit/submission-policies/standard-due-dates" target="_blank" rel="noopener" title="NIH R21/R03 new applications — Oct 16, 2026">
+              <span class="tl-lead" aria-hidden="true"></span>
               <span class="tl-name">NIH R21/R03</span>
               <span class="tl-date">Oct 16, 2026</span>
             </a>
             <a class="tl-item abstract" data-date="2026-10-28" href="https://www.ismrm.org/27m/" target="_blank" rel="noopener" title="ISMRM 2027 abstract deadline — Oct 28, 2026">
-              <span class="tl-name">ISMRM 2027 abstract</span>
+              <span class="tl-lead" aria-hidden="true"></span>
+              <span class="tl-name">ISMRM&#8217;27</span>
               <span class="tl-date">Oct 28, 2026</span>
             </a>
             <a class="tl-item abstract expected" data-date="2027-01-15" href="https://aaic.alz.org/abstracts/overview.asp" target="_blank" rel="noopener" title="AAIC 2027 abstract submission — expected mid-January 2027 (Chicago, Jul 18-22, 2027)">
-              <span class="tl-name">AAIC 2027 abstract</span>
+              <span class="tl-lead" aria-hidden="true"></span>
+              <span class="tl-name">AAIC&#8217;27</span>
               <span class="tl-date">Expected Jan 2027</span>
             </a>
             <a class="tl-item grant main" data-date="2027-02-05" href="https://grants.nih.gov/grants-process/submit/submission-policies/standard-due-dates" target="_blank" rel="noopener" title="NIH R01 new applications — Feb 5, 2027">
+              <span class="tl-lead" aria-hidden="true"></span>
               <span class="tl-name">NIH R01</span>
               <span class="tl-date">Feb 5, 2027</span>
             </a>
             <a class="tl-item grant main" data-date="2027-02-16" href="https://grants.nih.gov/grants-process/submit/submission-policies/standard-due-dates" target="_blank" rel="noopener" title="NIH R21/R03 new applications — Feb 16, 2027">
+              <span class="tl-lead" aria-hidden="true"></span>
               <span class="tl-name">NIH R21/R03</span>
               <span class="tl-date">Feb 16, 2027</span>
             </a>
             <a class="tl-item abstract expected" data-date="2027-04-01" href="https://menopause.org/annual-meetings/future-meetings" target="_blank" rel="noopener" title="Menopause Society 2027 abstract submission — expected spring 2027">
-              <span class="tl-name">Menopause 2027 abstract</span>
+              <span class="tl-lead" aria-hidden="true"></span>
+              <span class="tl-name">Menopause&#8217;27</span>
               <span class="tl-date">Expected Spring 2027</span>
             </a>
             <a class="tl-item abstract expected" data-date="2027-04-21" href="https://emas-online.org/events/16th-european-congress-of-menopause-and-andropause-society/" target="_blank" rel="noopener" title="EMAS 2027 abstract submission — expected spring 2027 (Gothenburg, May 19-21, 2027)">
-              <span class="tl-name">EMAS 2027 abstract</span>
+              <span class="tl-lead" aria-hidden="true"></span>
+              <span class="tl-name">EMAS&#8217;27</span>
               <span class="tl-date">Expected Spring 2027</span>
             </a>
           </div>
@@ -399,59 +408,55 @@
         const monthsCount =
           (end.getFullYear() - start.getFullYear()) * 12 +
           (end.getMonth() - start.getMonth());
-        const MONTH_H = 58;
-        const trackH = monthsCount * MONTH_H;
-        const totalDays = (end - start) / DAY;
-        const pxPerDay = trackH / totalDays;
-        const topFor = (d) => Math.round(((d - start) / DAY) * pxPerDay);
+
+        const MONTH_H = 60, TOP = 20, BOTTOM = 20;
+        const spanH = monthsCount * MONTH_H;
+        const pxPerDay = spanH / ((end - start) / DAY);
+        const yFor = (d) => TOP + Math.round(((d - start) / DAY) * pxPerDay);
         const fmt = (d) => MON[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
 
-        track.style.height = trackH + "px";
+        track.style.height = TOP + spanH + BOTTOM + "px";
 
-        // Month gridlines with labels in the left gutter.
+        // Month labels + ticks down the left margin.
         for (let i = 0; i < monthsCount; i++) {
           const m = new Date(start.getFullYear(), start.getMonth() + i, 1);
-          const line = document.createElement("div");
-          line.className = "tl-month";
-          line.style.top = topFor(m) + "px";
-          const label = document.createElement("span");
+          const label = document.createElement("div");
+          label.className = "tl-month";
+          label.style.top = yFor(m) + "px";
           label.textContent = MON[m.getMonth()] + " " + m.getFullYear();
-          line.appendChild(label);
-          track.appendChild(line);
+          track.appendChild(label);
         }
 
-        // "Today" marker.
+        // "Today" marker on the spine.
         const now = document.createElement("div");
         now.className = "tl-now";
-        now.style.top = topFor(today) + "px";
+        now.style.top = yFor(today) + "px";
         now.innerHTML = "<span>today</span>";
         track.appendChild(now);
 
-        // Position each item; fill in the hover date/day-count text.
-        parsed.forEach((p) => {
-          p.el.style.top = topFor(p.date) + "px";
-          const days = Math.ceil((p.date - today) / DAY);
-          const dateEl = p.el.querySelector(".tl-date");
-          if (days < 0) p.el.classList.add("past");
-          if (dateEl && !p.expected) {
-            if (days < 0) dateEl.textContent = fmt(p.date) + " · passed";
-            else if (days === 0) dateEl.textContent = fmt(p.date) + " · today";
-            else dateEl.textContent = fmt(p.date) + " · in " + days + (days === 1 ? " day" : " days");
-          }
-        });
-
-        // Nudge apart any items that would visually collide.
+        // Place items along leader lines; stagger clustered ones outward.
+        const OFFSETS = [24, 78, 132];
+        let prevY = -1e9;
+        let rank = 0;
         parsed
           .slice()
           .sort((a, b) => a.date - b.date)
-          .reduce((lastTop, p) => {
-            let t = parseFloat(p.el.style.top);
-            if (t - lastTop < 18) {
-              t = lastTop + 18;
-              p.el.style.top = t + "px";
+          .forEach((p) => {
+            const y = yFor(p.date);
+            rank = y - prevY < 70 ? Math.min(rank + 1, OFFSETS.length - 1) : 0;
+            prevY = y;
+            p.el.style.top = y + "px";
+            const lead = p.el.querySelector(".tl-lead");
+            if (lead) lead.style.width = OFFSETS[rank] + "px";
+            const days = Math.ceil((p.date - today) / DAY);
+            if (days < 0) p.el.classList.add("past");
+            const dateEl = p.el.querySelector(".tl-date");
+            if (dateEl && !p.expected) {
+              if (days < 0) dateEl.textContent = fmt(p.date) + " · passed";
+              else if (days === 0) dateEl.textContent = fmt(p.date) + " · today";
+              else dateEl.textContent = fmt(p.date) + " · in " + days + (days === 1 ? " day" : " days");
             }
-            return t;
-          }, -1e9);
+          });
 
         timeline.classList.add("tl-ready");
       })();

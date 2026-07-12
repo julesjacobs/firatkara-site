@@ -640,7 +640,7 @@ a:hover {
 }
 
 /* ---------------------------------------------------------------
-   Deadline timeline
+   Deadline timeline (leader-line style)
    --------------------------------------------------------------- */
 .tl-legend {
   display: flex;
@@ -660,7 +660,7 @@ a:hover {
 .tl-key::before {
   content: "";
   width: 18px;
-  border-top: 2px solid currentColor;
+  border-top: 1px dashed currentColor;
 }
 
 .tl-key-grant {
@@ -673,14 +673,11 @@ a:hover {
 
 .tl-key-expected {
   color: #7c8598;
-}
-
-.tl-key-expected::before {
-  border-top-style: dashed;
+  font-style: italic;
 }
 
 .timeline {
-  margin: 16px 0 0;
+  margin: 18px 0 0;
 }
 
 /* Fallback (no JS): a clean, readable list */
@@ -696,6 +693,10 @@ a:hover {
 
 .tl-track > .tl-item:last-of-type {
   border-bottom: 1px solid var(--soft-rule);
+}
+
+.tl-lead {
+  display: none;
 }
 
 .tl-name {
@@ -716,7 +717,7 @@ a:hover {
   white-space: nowrap;
 }
 
-/* Active timeline layout (applied by JS once positions are set) */
+/* Active timeline (applied by JS once positions are set) */
 .timeline.tl-ready .tl-track {
   position: relative;
 }
@@ -724,23 +725,24 @@ a:hover {
 .timeline.tl-ready .tl-track::before {
   content: "";
   position: absolute;
-  left: 60px;
+  left: 70px;
   top: 0;
   bottom: 0;
-  border-left: 1px solid var(--rule);
+  border-left: 3px solid #cfd4dd;
 }
 
 .timeline.tl-ready .tl-item {
   position: absolute;
-  left: 60px;
-  right: 2px;
-  z-index: 2;
-  gap: 10px;
-  padding: 2px 4px 0 10px;
-  flex-direction: row-reverse;
-  border-top: 2px solid var(--rule);
-  border-bottom: 0;
-  background: var(--background);
+  left: 70px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  white-space: nowrap;
+  color: var(--text);
 }
 
 .timeline.tl-ready .tl-track > .tl-item:last-of-type {
@@ -748,41 +750,52 @@ a:hover {
 }
 
 .timeline.tl-ready .tl-item.grant {
-  border-top-color: #1557a8;
+  color: #1557a8;
 }
 
 .timeline.tl-ready .tl-item.abstract {
-  border-top-color: #8e44ad;
+  color: #8e44ad;
 }
 
-.timeline.tl-ready .tl-item.expected {
-  border-top-style: dashed;
+.timeline.tl-ready .tl-lead {
+  display: inline-block;
+  height: 0;
+  border-top: 1px dashed currentColor;
+  opacity: 0.55;
+  margin-right: 8px;
+}
+
+.timeline.tl-ready .tl-name {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: inherit;
 }
 
 .timeline.tl-ready .tl-item.main .tl-name {
   font-weight: 700;
 }
 
-.timeline.tl-ready .tl-item.past {
-  opacity: 0.4;
-  border-top-style: dashed;
+.timeline.tl-ready .tl-item.expected .tl-name {
+  font-style: italic;
 }
 
-.timeline.tl-ready .tl-name {
-  font-size: 13px;
-  line-height: 1.35;
-  font-weight: 600;
+.timeline.tl-ready .tl-item.past {
+  opacity: 0.4;
+}
+
+.timeline.tl-ready .tl-item:hover .tl-name,
+.timeline.tl-ready .tl-item:focus-visible .tl-name {
+  text-decoration: underline;
 }
 
 .timeline.tl-ready .tl-date {
+  margin-left: 8px;
+  color: var(--muted);
+  font-size: 11.5px;
+  font-weight: 400;
+  font-style: normal;
   opacity: 0;
   transition: opacity 0.2s ease;
-  font-size: 12px;
-}
-
-.timeline.tl-ready .tl-item:hover,
-.timeline.tl-ready .tl-item:focus-visible {
-  z-index: 6;
 }
 
 .timeline.tl-ready .tl-item:hover .tl-date,
@@ -793,25 +806,28 @@ a:hover {
 .tl-month {
   position: absolute;
   left: 0;
-  right: 0;
-  z-index: 1;
-  border-top: 1px solid var(--soft-rule);
-}
-
-.tl-month span {
-  position: absolute;
-  top: -8px;
-  left: 0;
-  padding-right: 8px;
-  background: var(--background);
+  width: 60px;
+  transform: translateY(-50%);
+  text-align: right;
   color: var(--muted);
   font-size: 11px;
   font-weight: 600;
+  white-space: nowrap;
+}
+
+.tl-month::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  width: 16px;
+  border-top: 1px solid #b9c0cc;
+  transform: translateY(-50%);
 }
 
 .tl-now {
   position: absolute;
-  left: 60px;
+  left: 70px;
   width: 9px;
   height: 9px;
   z-index: 5;
@@ -822,8 +838,9 @@ a:hover {
 
 .tl-now span {
   position: absolute;
-  left: 11px;
-  top: -7px;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
   color: #ff3737;
   font-size: 10px;
   font-weight: 700;
