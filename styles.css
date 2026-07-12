@@ -349,6 +349,17 @@ a:hover {
   color: var(--muted);
 }
 
+.deadline-days.is-tba {
+  border-left-color: var(--rule);
+  color: var(--muted);
+}
+
+.deadline-days.is-tba strong {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
 .note-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -553,5 +564,77 @@ a:hover {
 
   .profile div:first-child {
     border-top: 0;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Motion & interaction (opt-in; disabled for reduced-motion users)
+   --------------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .portrait {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .portrait:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 18px 40px rgba(23, 32, 42, 0.2);
+  }
+
+  .focus-list article,
+  .note-list article,
+  .theme-grid article {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .focus-list article:hover,
+  .note-list article:hover,
+  .theme-grid article:hover {
+    transform: translateY(-4px);
+    border-color: var(--link);
+  }
+
+  .deadline-item {
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .deadline-item:hover {
+    background: var(--panel);
+    transform: translateX(3px);
+  }
+
+  .painting-gallery img {
+    transition: transform 0.5s ease;
+  }
+
+  .painting-gallery a:hover img {
+    transform: scale(1.05);
+  }
+
+  .membership-list li,
+  .publications li {
+    transition: background 0.25s ease;
+  }
+
+  .membership-list li:hover,
+  .publications li:hover {
+    background: var(--panel);
+  }
+
+  /* Scroll-reveal: hidden state applies only after JS adds .reveal-ready
+     to <html>, so no-JS and reduced-motion users always see content. */
+  html.reveal-ready .hero,
+  html.reveal-ready .page > section {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    will-change: opacity, transform;
+  }
+
+  html.reveal-ready .hero.is-visible,
+  html.reveal-ready .page > section.is-visible,
+  html.reveal-fallback .hero,
+  html.reveal-fallback .page > section {
+    opacity: 1;
+    transform: none;
   }
 }

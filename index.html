@@ -7,6 +7,20 @@
     <meta name="description" content="Firat Kara, PhD, Assistant Professor of Radiology at Mayo Clinic. Neuroimaging researcher studying brain aging, Alzheimer's disease, multiple sclerosis, and women's brain health across reproductive aging and menopause.">
     <link rel="canonical" href="https://firatkara.nl/">
     <link rel="stylesheet" href="styles.css">
+    <script>
+      // Enable scroll-reveal early (before paint) unless the visitor
+      // prefers reduced motion. Keeps content visible if JS is disabled.
+      if (!window.matchMedia || !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("reveal-ready");
+        // Safety net: if the reveal script never initializes, force
+        // everything visible so content can't stay hidden.
+        setTimeout(function () {
+          if (!window.__revealInit) {
+            document.documentElement.classList.add("reveal-fallback");
+          }
+        }, 2000);
+      }
+    </script>
   </head>
   <body>
     <main class="page">
@@ -175,78 +189,26 @@
       <section id="deadlines" aria-labelledby="deadlines-heading">
         <h2 id="deadlines-heading">Deadlines</h2>
         <p class="section-note">
-          Selected grant, meeting, and symposium dates I am tracking for
-          neuroimaging, MRS, Alzheimer's disease, and women's brain health work.
+          Grant submission dates and conference abstract deadlines I am tracking
+          for neuroimaging, MRS, Alzheimer's disease, and women's brain health
+          work. Dates marked <em>Expected</em> are estimated from prior years and
+          not yet officially announced.
         </p>
         <div class="deadline-list" aria-label="Upcoming research deadlines">
           <div class="deadline-today">
             <span>Today</span>
           </div>
           <article class="deadline-item">
-            <time class="deadline-date" datetime="2026-06-15">Jun 15, 2026</time>
-            <div class="deadline-detail">
-              <h3>
-                <a href="https://mrs2026.com/abstract-submission">MRS Workshop 2026 abstract deadline</a>
-              </h3>
-              <p>Where East Meets West for Metabolic Imaging; MRS workshop in Kusadasi, Turkiye.</p>
-              <span class="deadline-type">Abstract deadline</span>
-            </div>
-            <span class="deadline-days" data-deadline-date="2026-06-15">
-              <strong class="days-value">6</strong>
-              <span class="days-label">days</span>
-            </span>
-          </article>
-          <article class="deadline-item">
-            <time class="deadline-date" datetime="2026-06-16">Jun 16, 2026</time>
-            <div class="deadline-detail">
-              <h3>
-                <a href="https://grants.nih.gov/grants/dates.htm">NIH R21/R03 new applications</a>
-              </h3>
-              <p>Standard NIH cycle for exploratory and small research grant applications.</p>
-              <span class="deadline-type">NIH grant</span>
-            </div>
-            <span class="deadline-days" data-deadline-date="2026-06-16">
-              <strong class="days-value">7</strong>
-              <span class="days-label">days</span>
-            </span>
-          </article>
-          <article class="deadline-item">
-            <time class="deadline-date" datetime="2026-06-22">Jun 22, 2026</time>
-            <div class="deadline-detail">
-              <h3>Mayo Women's Health Research Symposium abstract deadline</h3>
-              <p>Abstract deadline for the 10th Annual Women's Health Research Symposium on sex differences in regenerative medicine.</p>
-              <span class="deadline-type">Abstract deadline</span>
-            </div>
-            <span class="deadline-days" data-deadline-date="2026-06-22">
-              <strong class="days-value">13</strong>
-              <span class="days-label">days</span>
-            </span>
-          </article>
-          <article class="deadline-item">
             <time class="deadline-date" datetime="2026-10-05">Oct 5, 2026</time>
             <div class="deadline-detail">
               <h3>
-                <a href="https://grants.nih.gov/grants/dates.htm">NIH R01 new applications</a>
+                <a href="https://grants.nih.gov/grants-process/submit/submission-policies/standard-due-dates">NIH R01 new applications</a>
               </h3>
               <p>Standard NIH cycle for new research project grant applications.</p>
               <span class="deadline-type">NIH grant</span>
             </div>
             <span class="deadline-days" data-deadline-date="2026-10-05">
-              <strong class="days-value">118</strong>
-              <span class="days-label">days</span>
-            </span>
-          </article>
-          <article class="deadline-item">
-            <time class="deadline-date" datetime="2026-10-14">Oct 14-18, 2026</time>
-            <div class="deadline-detail">
-              <h3>
-                <a href="https://mrs2026.com/">MRS Workshop 2026</a>
-              </h3>
-              <p>ISMRM-endorsed workshop on metabolic imaging and magnetic resonance spectroscopy.</p>
-              <span class="deadline-type">Workshop</span>
-            </div>
-            <span class="deadline-days" data-deadline-date="2026-10-14">
-              <strong class="days-value">127</strong>
+              <strong class="days-value">86</strong>
               <span class="days-label">days</span>
             </span>
           </article>
@@ -254,40 +216,95 @@
             <time class="deadline-date" datetime="2026-10-16">Oct 16, 2026</time>
             <div class="deadline-detail">
               <h3>
-                <a href="https://grants.nih.gov/grants/dates.htm">NIH R21/R03 new applications</a>
+                <a href="https://grants.nih.gov/grants-process/submit/submission-policies/standard-due-dates">NIH R21/R03 new applications</a>
+              </h3>
+              <p>Standard NIH cycle for exploratory and small research grant applications.</p>
+              <span class="deadline-type">NIH grant</span>
+            </div>
+            <span class="deadline-days" data-deadline-date="2026-10-16">
+              <strong class="days-value">97</strong>
+              <span class="days-label">days</span>
+            </span>
+          </article>
+          <article class="deadline-item">
+            <time class="deadline-date" datetime="2026-10-28">Oct 28, 2026</time>
+            <div class="deadline-detail">
+              <h3>
+                <a href="https://www.ismrm.org/27m/">ISMRM 2027 abstract deadline</a>
+              </h3>
+              <p>Abstract submission for the 2027 ISMRM &amp; ISMRT Annual Meeting, Vancouver (May 8-13, 2027).</p>
+              <span class="deadline-type">Abstract deadline</span>
+            </div>
+            <span class="deadline-days" data-deadline-date="2026-10-28">
+              <strong class="days-value">109</strong>
+              <span class="days-label">days</span>
+            </span>
+          </article>
+          <article class="deadline-item">
+            <time class="deadline-date" datetime="2027-01">Expected Jan 2027</time>
+            <div class="deadline-detail">
+              <h3>
+                <a href="https://aaic.alz.org/abstracts/overview.asp">AAIC 2027 abstract submission</a>
+              </h3>
+              <p>Abstract deadline for the Alzheimer's Association International Conference, Chicago (Jul 18-22, 2027). Typically mid-January.</p>
+              <span class="deadline-type">Abstract deadline</span>
+            </div>
+            <span class="deadline-days is-tba">
+              <strong class="days-value">TBA</strong>
+            </span>
+          </article>
+          <article class="deadline-item">
+            <time class="deadline-date" datetime="2027-02-05">Feb 5, 2027</time>
+            <div class="deadline-detail">
+              <h3>
+                <a href="https://grants.nih.gov/grants-process/submit/submission-policies/standard-due-dates">NIH R01 new applications</a>
+              </h3>
+              <p>Next standard NIH cycle for new research project grant applications.</p>
+              <span class="deadline-type">NIH grant</span>
+            </div>
+            <span class="deadline-days" data-deadline-date="2027-02-05">
+              <strong class="days-value">209</strong>
+              <span class="days-label">days</span>
+            </span>
+          </article>
+          <article class="deadline-item">
+            <time class="deadline-date" datetime="2027-02-16">Feb 16, 2027</time>
+            <div class="deadline-detail">
+              <h3>
+                <a href="https://grants.nih.gov/grants-process/submit/submission-policies/standard-due-dates">NIH R21/R03 new applications</a>
               </h3>
               <p>Next standard NIH cycle for exploratory and small research grant applications.</p>
               <span class="deadline-type">NIH grant</span>
             </div>
-            <span class="deadline-days" data-deadline-date="2026-10-16">
-              <strong class="days-value">129</strong>
+            <span class="deadline-days" data-deadline-date="2027-02-16">
+              <strong class="days-value">220</strong>
               <span class="days-label">days</span>
             </span>
           </article>
           <article class="deadline-item">
-            <time class="deadline-date" datetime="2026-10-20">Oct 20-24, 2026</time>
+            <time class="deadline-date" datetime="2027-04">Expected Spring 2027</time>
             <div class="deadline-detail">
               <h3>
-                <a href="https://menopause.org/annual-meetings/future-meetings">The Menopause Society Annual Meeting 2026</a>
+                <a href="https://menopause.org/annual-meetings/future-meetings">Menopause Society 2027 abstract submission</a>
               </h3>
-              <p>Annual meeting in San Diego, California; relevant to menopause, hormone therapy, and women's brain health work.</p>
-              <span class="deadline-type">Annual meeting</span>
+              <p>Abstract deadline for The Menopause Society 2027 Annual Meeting. Regular deadline fell in late March / April in recent years.</p>
+              <span class="deadline-type">Abstract deadline</span>
             </div>
-            <span class="deadline-days" data-deadline-date="2026-10-20">
-              <strong class="days-value">133</strong>
-              <span class="days-label">days</span>
+            <span class="deadline-days is-tba">
+              <strong class="days-value">TBA</strong>
             </span>
           </article>
           <article class="deadline-item">
-            <time class="deadline-date" datetime="2026-11-13">Nov 13, 2026</time>
+            <time class="deadline-date" datetime="2027-04">Expected Spring 2027</time>
             <div class="deadline-detail">
-              <h3>Mayo Women's Health Research Symposium</h3>
-              <p>10th Annual Women's Health Research Symposium: Sex Differences in Regenerative Medicine.</p>
-              <span class="deadline-type">Symposium</span>
+              <h3>
+                <a href="https://emas-online.org/events/16th-european-congress-of-menopause-and-andropause-society/">EMAS 2027 abstract submission</a>
+              </h3>
+              <p>Abstract deadline for the 16th European Congress of EMAS, Gothenburg (May 19-21, 2027). Prior deadlines fell in spring.</p>
+              <span class="deadline-type">Abstract deadline</span>
             </div>
-            <span class="deadline-days" data-deadline-date="2026-11-13">
-              <strong class="days-value">157</strong>
-              <span class="days-label">days</span>
+            <span class="deadline-days is-tba">
+              <strong class="days-value">TBA</strong>
             </span>
           </article>
         </div>
@@ -339,10 +356,32 @@
     </main>
     <script>
       (() => {
+        window.__revealInit = true;
+        const reduceMotion =
+          window.matchMedia &&
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         const today = new Date();
         today.setHours(0, 0, 0, 0);
         const dayMs = 24 * 60 * 60 * 1000;
 
+        // Animate a counter from 0 to its final value.
+        const countUp = (el, target) => {
+          if (reduceMotion || target <= 0) {
+            el.textContent = target;
+            return;
+          }
+          const duration = 700;
+          const start = performance.now();
+          const step = (now) => {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(eased * target);
+            if (progress < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        };
+
+        // Compute days remaining for each dated deadline.
         document.querySelectorAll("[data-deadline-date]").forEach((counter) => {
           const deadline = new Date(`${counter.dataset.deadlineDate}T00:00:00`);
           const days = Math.ceil((deadline - today) / dayMs);
@@ -360,10 +399,50 @@
             label.textContent = "";
             counter.classList.add("is-today");
           } else {
-            value.textContent = days;
             label.textContent = days === 1 ? "day" : "days";
+            counter.dataset.countTarget = days;
+            value.textContent = "0";
           }
         });
+
+        // Scroll-reveal sections; count-up numbers when they appear.
+        const revealTargets = document.querySelectorAll(
+          ".hero, .page > section"
+        );
+
+        const runCounters = (root) => {
+          root
+            .querySelectorAll(".deadline-days[data-count-target]")
+            .forEach((counter) => {
+              const value = counter.querySelector(".days-value");
+              const target = Number(counter.dataset.countTarget);
+              if (value && !counter.dataset.counted) {
+                counter.dataset.counted = "true";
+                countUp(value, target);
+              }
+            });
+        };
+
+        if (reduceMotion || !("IntersectionObserver" in window)) {
+          revealTargets.forEach((el) => el.classList.add("is-visible"));
+          runCounters(document);
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                runCounters(entry.target);
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { rootMargin: "0px 0px -10% 0px", threshold: 0.08 }
+        );
+
+        revealTargets.forEach((el) => observer.observe(el));
       })();
     </script>
   </body>
