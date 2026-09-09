@@ -680,6 +680,29 @@ a:hover {
   margin: 18px 0 0;
 }
 
+.deadline-watch {
+  margin: 18px 0 0;
+  padding: 12px 14px;
+  border-left: 3px solid #1557a8;
+  background: var(--panel);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.deadline-watch span {
+  margin-right: 7px;
+  color: #1557a8;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.deadline-watch a {
+  color: var(--text);
+  font-weight: 600;
+}
+
 /* Fallback (no JS): a clean, readable list */
 .tl-item {
   display: flex;
