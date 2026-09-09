@@ -690,6 +690,10 @@ a:hover {
   line-height: 1.55;
 }
 
+.deadline-watch + .deadline-watch {
+  margin-top: 10px;
+}
+
 .deadline-watch span {
   margin-right: 7px;
   color: #1557a8;
