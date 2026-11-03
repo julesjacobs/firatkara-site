@@ -477,6 +477,94 @@ a:hover {
   object-fit: cover;
 }
 
+.video-player {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 8px 0 10px;
+  background: #05080f;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(23, 32, 42, 0.12);
+}
+
+.video-meta {
+  display: block;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.video-index {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+.video-index li {
+  padding: 8px 0 0;
+}
+
+.video-index a {
+  font-weight: 650;
+}
+
+.chapter-list {
+  margin: 0 0 26px;
+  padding: 0;
+  list-style: none;
+  columns: 2;
+  column-gap: 28px;
+}
+
+.chapter-list li {
+  margin: 0 0 6px;
+  break-inside: avoid;
+  font-size: 16px;
+}
+
+.chapter-list button {
+  min-width: 52px;
+  margin-right: 8px;
+  padding: 1px 8px;
+  color: var(--link);
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+
+.chapter-list button:hover {
+  border-color: var(--link);
+}
+
+.transcript {
+  margin: 0;
+  padding: 14px 18px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+
+.transcript summary {
+  color: var(--link);
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.transcript[open] summary {
+  margin-bottom: 12px;
+}
+
+.transcript p {
+  font-size: 16px;
+}
+
+.transcript p:last-child {
+  margin-bottom: 0;
+}
+
 .footer {
   display: flex;
   flex-wrap: wrap;
@@ -538,6 +626,10 @@ a:hover {
   .painting-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
+  }
+
+  .chapter-list {
+    columns: 1;
   }
 
   .priority-section {
